@@ -12,9 +12,11 @@ function calcularCadena(cadena) {
       cadena = cadena.substring(finDelimitador + 2);
     }
     const valores = cadena.split(new RegExp(`[ ,\\-${delimitador}]+`)).map(Number);
-    return valores.reduce((total, valor) => total + valor, 0);
+    const numerosValidos = valores.filter(numero => numero <= 1000);
+    return numerosValidos.reduce((total, valor) => total + valor, 0);
   }
   export default calcularCadena;
+  
   
   
   

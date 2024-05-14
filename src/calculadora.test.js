@@ -19,5 +19,8 @@ describe("calcular", () => {
   it("debería sumar los valores de la cadena con delimitador especificado, comas y guiones", () => {
     expect(calcularCadena("//[;] 6,3-2;1")).toEqual(12);
   });
+  it("debería ignorar los números mayores a 1000", () => {
+    expect(calcularCadena("2, 1001")).toEqual(2);
+  });
 });
 
