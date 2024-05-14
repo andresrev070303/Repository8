@@ -10,5 +10,10 @@ describe("calcular", () => {
   it("debería sumar los valores de la cadena", () => {
     expect(calcularCadena("5 7")).toEqual(12);
   });
+  it("debería sumar los valores de la cadena separada por coma", () => {
+    expect(calcularCadena("1,2,4,8")).toEqual(15);
+  });
+  
+  
 });
 
