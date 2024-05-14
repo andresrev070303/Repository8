@@ -7,5 +7,8 @@ describe("calcular", () => {
   it("debería devolver el valor del elemento de la cadena ", () => {
     expect(calcularCadena("5")).toEqual(5);
   });
+  it("debería sumar los valores de la cadena", () => {
+    expect(calcularCadena("5 7")).toEqual(12);
+  });
 });
 
