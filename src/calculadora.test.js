@@ -13,7 +13,8 @@ describe("calcular", () => {
   it("debería sumar los valores de la cadena separada por coma", () => {
     expect(calcularCadena("1,2,4,8")).toEqual(15);
   });
-  
-  
+  it("debería sumar los valores de la cadena separada por guion y coma", () => {
+    expect(calcularCadena("1-2,3")).toEqual(6);
+  });
 });
 
