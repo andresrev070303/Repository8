@@ -16,5 +16,8 @@ describe("calcular", () => {
   it("debería sumar los valores de la cadena separada por guion y coma", () => {
     expect(calcularCadena("1-2,3")).toEqual(6);
   });
+  it("debería sumar los valores de la cadena con delimitador especificado, comas y guiones", () => {
+    expect(calcularCadena("//[;] 6,3-2;1")).toEqual(12);
+  });
 });
 
