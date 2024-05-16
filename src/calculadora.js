@@ -1,23 +1,25 @@
-function calcularCadena(cadena) {
+function sumarValoresCadena(cadena) {
     if (Array.isArray(cadena)) {
       return [];
     }
     if (!cadena.includes(" ") && !cadena.includes(",") && !cadena.includes("-") && !cadena.includes(";")) {
       return parseInt(cadena);
     }
-    let delimitador = ",";
+    let separador = ",";
     if (cadena.startsWith("//[")) {
-      const finDelimitador = cadena.indexOf("]");
-      delimitador = cadena.substring(3, finDelimitador);
-      cadena = cadena.substring(finDelimitador + 2);
+      const finSeparador = cadena.indexOf("]");
+      separador = cadena.substring(3, finSeparador);
+      cadena = cadena.substring(finSeparador + 2);
     }
-    const valores = cadena.split(new RegExp(`[ ,\\-${delimitador}]+`)).map(Number);
-    const numerosValidos = valores.filter(numero => numero <= 1000);
-    return numerosValidos.reduce((total, valor) => total + valor, 0);
-  }
-  export default calcularCadena;
-  
-  
-  
-  
+    const valores = dividirCadena(cadena, separador).map(Number);
+    const numerosPorDebajoDeLimite = valores.filter(numero => numero <= 1000);
+    return numerosPorDebajoDeLimite.reduce((total, valor) => total + valor, 0);
+}
+
+function dividirCadena(cadena, separador) {
+    return cadena.split(new RegExp(`[ ,\\-${separador}]+`));
+}
+
+export default sumarValoresCadena;
+
   
