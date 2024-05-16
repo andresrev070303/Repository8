@@ -1,10 +1,11 @@
 function sumarValoresCadena(cadena) {
-  if (Array.isArray(cadena)) {
-      return [];
-  }
-  if (esNumero(cadena)) {
-      return parseInt(cadena);
-  }
+  
+  if (cadena.trim() === "") {
+    return 0;
+}
+if (esNumero(cadena)) {
+    return parseInt(cadena);
+}
   const separador = obtenerSeparador(cadena);
   const valores = dividirCadena(cadena, separador).map(Number);
   const numerosPorDebajoDeLimite = filtrarNumerosPorDebajoDelLimite(valores);
