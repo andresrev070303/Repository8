@@ -7,7 +7,7 @@ function sumarValoresCadena(cadena) {
   }
   const separador = obtenerSeparador(cadena);
   const valores = dividirCadena(cadena, separador).map(Number);
-  const numerosPorDebajoDeLimite = filtrarNumerosPorLimite(valores);
+  const numerosPorDebajoDeLimite = filtrarNumerosPorDebajoDelLimite(valores);
   return sumarNumeros(numerosPorDebajoDeLimite);
 }
 
@@ -32,7 +32,7 @@ function dividirCadena(cadena, separador) {
   return cadena.split(new RegExp(`[ ,\\-${separador}]+`));
 }
 
-function filtrarNumerosPorLimite(valores) {
+function filtrarNumerosPorDebajoDelLimite(valores) {
   return valores.filter(numero => numero <= 1000);
 }
 
